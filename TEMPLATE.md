@@ -2,8 +2,8 @@
 
 ## Run locally
 
-	docker-compose run --rm dev
+	docker-compose run --rm --user=$UID dev
 
 ## Run tests
 	
-	docker-compose run --rm dev python -m unittest discover
+	docker-compose run --rm --user=$UID dev python -m unittest discover

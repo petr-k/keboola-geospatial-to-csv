@@ -1,8 +1,10 @@
 version: '2'
 services:
-  # for development purposes
   dev:
-    build: .
+    build:
+      context: .
+      args:
+        REQUIREMENTS_FILE: requirements-dev.txt
     volumes:
         - ./:/code
         - ./data:/data
