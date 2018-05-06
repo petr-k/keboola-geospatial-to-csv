@@ -6,4 +6,4 @@
 
 ## Run tests
 	
-	docker-compose run --rm --user=$UID dev python -m unittest discover
+	docker-compose run --rm --user=$UID dev python -m pytest
