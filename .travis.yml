@@ -6,10 +6,10 @@ services:
 before_script:
   - export APP_IMAGE=keboola-component
   - docker -v
-  - docker build -t $APP_IMAGE .
   - docker build -t $APP_IMAGE:testing --build-arg REQUIREMENTS_FILE=requirements-dev.txt  .
   - docker run $APP_IMAGE:testing flake8
-  - docker run $APP_IMAGE:testing python -m unittest discover
+  - docker run $APP_IMAGE:testing pytest
+  - rm -rf src/tests && docker build -t $APP_IMAGE .
   # push test image to ECR
   # - docker pull quay.io/keboola/developer-portal-cli-v2:latest
   # - export REPOSITORY=`docker run --rm -e KBC_DEVELOPERPORTAL_USERNAME -e KBC_DEVELOPERPORTAL_PASSWORD -e KBC_DEVELOPERPORTAL_URL quay.io/keboola/developer-portal-cli-v2:latest ecr:get-repository $KBC_DEVELOPERPORTAL_VENDOR $KBC_DEVELOPERPORTAL_APP`
