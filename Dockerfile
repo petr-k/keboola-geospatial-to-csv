@@ -1,8 +1,12 @@
 FROM python:3.6-alpine
 
-RUN apk add \
-	gdal git \
-	--no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+RUN apk update && \
+    apk add git && \
+    apk add build-base musl-dev --virtual build-dependencies && \
+    apk add gdal-dev --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
+    pip install gdal &&\
+    apk del build-dependencies && \
+    rm -rf /var/cache/apk/*
 
 ARG REQUIREMENTS_FILE=requirements.txt
 
@@ -15,5 +19,5 @@ RUN pip install \
 
 COPY . .
 
-# Run the application
 CMD python3 -u ./src/main.py
+

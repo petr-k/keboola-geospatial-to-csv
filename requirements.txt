@@ -1,1 +1,2 @@
 git+git://github.com/keboola/python-docker-application.git@2.0.1
+gdal
