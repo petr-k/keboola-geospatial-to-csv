@@ -1,5 +1,10 @@
 import csv
 from keboola import docker
+from osgeo import gdal, ogr
+
+gdal.PushErrorHandler('CPLQuietErrorHandler')
+gdal.UseExceptions()
+ogr.UseExceptions()
 
 
 def run(datadir):

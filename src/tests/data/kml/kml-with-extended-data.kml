@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root">
+    <name>Lincoln Park GC - no Style</name>
+    <Snippet/>
+    <description>
+      <![CDATA[
+        Each Placemark has:<br/>
+        <ul>
+          <li>id=holeN</li>
+          <li>name=N</li>
+          <li>no description or Snippet</li>
+          <li>ExtendedData/Data</li>
+          <ul>
+            <li>edited</li>
+            <li>blueyardage</li>
+            <li>whiteyardage</li>
+            <li>menshandicap</li>
+            <li>menspar</li>
+            <li>redyardage</li>
+            <li>womenshandicap</li>
+            <li>womenspar</li>
+          </ul>
+        <ul>
+       ]]>
+    </description>
+    <Placemark id="hole1">
+      <name>1</name>
+      <ExtendedData>
+        <Data name="edited">
+          <value>2009-11-25T16:53:48.011Z</value>
+        </Data>
+        <Data name="blueyardage">
+          <value>316</value>
+        </Data>
+        <Data name="whiteyardage">
+          <value>299</value>
+        </Data>
+        <Data name="menshandicap">
+          <value>3</value>
+        </Data>
+        <Data name="menspar">
+          <value>4</value>
+        </Data>
+        <Data name="redyardage">
+          <value>281</value>
+        </Data>
+        <Data name="womenshandicap">
+          <value>3</value>
+        </Data>
+        <Data name="womenspar">
+          <value>4</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -122.494783,37.782353,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="hole2">
+      <name>2</name>
+      <ExtendedData>
+        <Data name="edited">
+          <value>2009-11-25T16:53:48.011Z</value>
+        </Data>
+        <Data name="blueyardage">
+          <value>257</value>
+        </Data>
+        <Data name="whiteyardage">
+          <value>245</value>
+        </Data>
+        <Data name="menshandicap">
+          <value>11</value>
+        </Data>
+        <Data name="menspar">
+          <value>4</value>
+        </Data>
+        <Data name="redyardage">
+          <value>231</value>
+        </Data>
+        <Data name="womenshandicap">
+          <value>13</value>
+        </Data>
+        <Data name="womenspar">
+          <value>4</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -122.497593,37.783407,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="hole3">
+      <name>3</name>
+      <ExtendedData>
+        <Data name="edited">
+          <value>2009-11-25T16:53:48.011Z</value>
+        </Data>
+        <Data name="blueyardage">
+          <value>156</value>
+        </Data>
+        <Data name="whiteyardage">
+          <value>140</value>
+        </Data>
+        <Data name="menshandicap">
+          <value>15</value>
+        </Data>
+        <Data name="menspar">
+          <value>3</value>
+        </Data>
+        <Data name="redyardage">
+          <value>133</value>
+        </Data>
+        <Data name="womenshandicap">
+          <value>15</value>
+        </Data>
+        <Data name="womenspar">
+          <value>3</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -122.501432,37.786807,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

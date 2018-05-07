@@ -1,12 +1,6 @@
-FROM python:3.6-alpine
+FROM petkr/gdal-python-alpine:python3.6-gdal2.2.4-v1
 
-RUN apk update && \
-    apk add git && \
-    apk add build-base musl-dev --virtual build-dependencies && \
-    apk add gdal-dev --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
-    pip install gdal &&\
-    apk del build-dependencies && \
-    rm -rf /var/cache/apk/*
+RUN apk add git --no-cache
 
 ARG REQUIREMENTS_FILE=requirements.txt
 
