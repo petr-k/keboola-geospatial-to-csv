@@ -1,4 +1,6 @@
 # keboola-geospatial-to-csv
+[![Build Status](https://travis-ci.org/petr-k/keboola-geospatial-to-csv.svg?branch=master)](https://travis-ci.org/petr-k/keboola-geospatial-to-csv)
+
 
 A Keboola Connection processor component that can produce CSV tables from various geospatial formats.
 
