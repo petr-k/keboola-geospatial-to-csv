@@ -18,7 +18,7 @@ def clean_out_files_dir():
                 shutil.rmtree(os.path.join(out_files_dir, d))
     clean()
     yield None
-    clean()
+    # clean()
 
 
 def out_file_exists(rel_path):
@@ -27,5 +27,5 @@ def out_file_exists(rel_path):
 
 def test_run():
     run(data_dir)
-    assert out_file_exists("kml/kml-with-extended-data.kml.csv")
-    assert out_file_exists("shapefile/stations.shp.csv")
+    assert out_file_exists("kml/kml-with-extended-data.csv")
+    assert out_file_exists("shapefile/stations.csv")

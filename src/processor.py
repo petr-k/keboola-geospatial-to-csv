@@ -1,5 +1,4 @@
-import glob
-from os import path, makedirs
+from pathlib import Path
 from keboola import docker as kbc_py
 from osgeo import gdal, ogr
 from config_schema import validate_expand_defaults
@@ -16,13 +15,12 @@ ogr.UseExceptions()
 def run(datadir):
     cfg = kbc_py.Config(datadir)
 
-    in_base_path = path.join(datadir, 'in/files')
-    out_base_path = path.join(datadir, 'out/files')
+    datadir_path = Path(datadir)
+    in_base_path = datadir_path / 'in/files'
+    out_base_path = datadir_path / 'out/files'
 
     params = validate_expand_defaults(cfg.get_parameters())
-    print("Supported formats: " + str(list(input_formats.keys())))
-    print("Datadir: " + str(glob.glob(path.join(datadir, '**'),
-          recursive=True)))
+    print("Datadir: " + str(list(str(d) for d in datadir_path.glob("**"))))
 
     output_params = params["output"]
     feature_format = feature_output_formats[output_params["featureFormat"]]
@@ -36,20 +34,23 @@ def run(datadir):
         if not enabled:
             continue
 
-        matching_files = glob.glob(path.join(in_base_path, glob_pattern),
-                                   recursive=True)
+        matching_files = list(in_base_path.glob(glob_pattern))
         print(f"Files matching {glob_pattern} in {in_base_path}: "
-              f"{matching_files}")
+              f"{[str(f) for f in matching_files]}")
+
         for full_in_path in matching_files:
-            relative_path = path.relpath(full_in_path, start=in_base_path)
-            target_relative_path = relative_path + ".csv"
-            full_out_path = path.join(out_base_path, target_relative_path)
+            relative_path = Path(full_in_path).relative_to(in_base_path)
+            target_relative_path = relative_path.with_suffix(".csv")
+
+            full_out_path = out_base_path / target_relative_path
+
             print(f"Converting {relative_path} (as {format_name}) "
                   f"to {target_relative_path}")
-            makedirs(path.dirname(full_out_path), exist_ok=True)
-            with open(full_out_path, mode="wt", encoding="utf=8") as out_file:
-                convert(full_in_path,
-                        out_file,
+
+            full_out_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(str(full_out_path), mode="wt", encoding="utf=8") as out:
+                convert(str(full_in_path),
+                        out,
                         in_format,
                         feature_format,
                         include_additional_fields)
