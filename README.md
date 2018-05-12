@@ -1,18 +1,16 @@
 # keboola-geospatial-to-csv
 
-A Keboola component that can produce CSV tables from various geospatial formats.
+A Keboola Connection processor component that can produce CSV tables from various geospatial formats.
 
-## Input
-
-File in one of the supported formats:
+## Data formats
+Input files can be one the supported formats:
 * shapefile
 * KML
 
-## Output
+Output files are CSVs with a geometry column and optionally additional
+nonspatial fields present in the data source.
 
-CSV table with a geometry column and optionally additional nonspatial fields present in the data source.
-
-Format of the geometry column in the output CSV can be one of:
+The geometry column in the output CSV can be formatted as one of:
 * _GeoJSON feature_
 * _GeoJSON geometry_
 * _WKT_

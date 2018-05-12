@@ -1,11 +1,11 @@
-import my_component
+import processor
 import os
 import sys
 import traceback
 
 try:
     datadir = os.environ.get('KBC_DATADIR') or '/data/'
-    my_component.run(datadir)
+    processor.run(datadir)
 except ValueError as err:
     print(err, file=sys.stderr)
     sys.exit(1)

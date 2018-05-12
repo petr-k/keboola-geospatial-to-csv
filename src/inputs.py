@@ -88,7 +88,7 @@ class _GenericOgrFormat(InputFormat):
         self.ogr_driver.thisown = 0
 
     def open(self, path):
-        data_source = self.ogr_driver.Open(path)  # 0 = open
+        data_source = self.ogr_driver.Open(path, 0)  # 0 = open
         if not data_source:
             raise ValueError(f"Could not open {path}")
         layer = data_source.GetLayer()

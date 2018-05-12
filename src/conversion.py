@@ -6,7 +6,8 @@ from outputs import FeatureOutputFormat
 docker.Config.register_csv_dialect()
 
 
-def convert(input_file, output_stream,
+def convert(input_file,
+            output_stream,
             input_format: InputFormat,
             feature_output_format: FeatureOutputFormat,
             include_fields=True):

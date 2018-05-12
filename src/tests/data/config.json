@@ -1,0 +1,16 @@
+{
+  "storage": {
+    "input": {
+      "tables": []
+    },
+    "output": {
+      "tables": []
+    }
+  },
+  "parameters": {
+    "output": {
+      "includeAdditionalColumns": true,
+      "featureFormat": "geojson-geometry"
+    }
+  }
+}

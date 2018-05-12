@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "output": {
+      "type": "object",
+      "default": {},
+      "properties": {
+        "includeAdditionalColumns": {
+          "type": "boolean",
+          "default": true
+        },
+        "featureFormat": {
+          "type": "string",
+          "enum": [
+            "wkt", "geojson-geometry", "geojson-feature"
+          ],
+          "default": "geojson-geometry"
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "default": {},
+
+      "properties": {
+        "format": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "kml": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "glob": {
+                  "type": "string",
+                  "default": "**/*.kml",
+                  "pattern": "^(?!\/).+"
+                }
+              },
+              "default": {}
+            },
+            "shapefile": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "glob": {
+                  "type": "string",
+                  "default": "**/*.shp",
+                  "pattern": "^(?!\/).+"
+                }
+              },
+              "default": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
