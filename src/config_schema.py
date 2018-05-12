@@ -38,4 +38,3 @@ def validate_expand_defaults(config_parameters):
     cloned_parameters = copy.deepcopy(config_parameters)
     _validator.validate(cloned_parameters)
     return cloned_parameters
-
