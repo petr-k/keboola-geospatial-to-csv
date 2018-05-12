@@ -17,7 +17,7 @@ def run(datadir):
     cfg = kbc_py.Config(datadir)
 
     in_base_path = path.join(datadir, 'in/files')
-    out_base_path = path.join(datadir, 'out/tables')
+    out_base_path = path.join(datadir, 'out/files')
 
     params = validate_expand_defaults(cfg.get_parameters())
 
