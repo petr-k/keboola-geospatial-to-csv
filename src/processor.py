@@ -20,6 +20,9 @@ def run(datadir):
     out_base_path = path.join(datadir, 'out/files')
 
     params = validate_expand_defaults(cfg.get_parameters())
+    print("Supported formats: " + str(list(input_formats.keys())))
+    print("Datadir: " + str(glob.glob(path.join(datadir, '**'),
+          recursive=True)))
 
     output_params = params["output"]
     feature_format = feature_output_formats[output_params["featureFormat"]]
@@ -33,7 +36,11 @@ def run(datadir):
         if not enabled:
             continue
 
-        for full_in_path in glob.iglob(path.join(in_base_path, glob_pattern)):
+        matching_files = glob.glob(path.join(in_base_path, glob_pattern),
+                                   recursive=True)
+        print(f"Files matching {glob_pattern} in {in_base_path}: "
+              f"{matching_files}")
+        for full_in_path in matching_files:
             relative_path = path.relpath(full_in_path, start=in_base_path)
             target_relative_path = relative_path + ".csv"
             full_out_path = path.join(out_base_path, target_relative_path)
