@@ -29,3 +29,4 @@ def test_run():
     run(data_dir)
     assert out_file_exists("kml/kml-with-extended-data.csv")
     assert out_file_exists("shapefile/stations.csv")
+    assert out_file_exists("geojson/stations.csv")

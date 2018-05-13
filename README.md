@@ -8,6 +8,7 @@ A Keboola Connection processor component that can produce CSV tables from variou
 Input files can be one the supported formats:
 * shapefile
 * KML
+* GeoJSON (feature collection)
 
 Output files are CSVs with a geometry column and optionally additional
 nonspatial fields present in the data source.

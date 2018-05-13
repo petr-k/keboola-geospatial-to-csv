@@ -97,5 +97,7 @@ class _GenericOgrFormat(InputFormat):
 
 format_kml = _GenericOgrFormat("kml", "LIBKML")
 format_shapefile = _GenericOgrFormat("shapefile", "ESRI Shapefile")
+format_geojson = _GenericOgrFormat("geojson", "GeoJSON")
 
-input_formats = {f.name: f for f in [format_kml, format_shapefile]}
+input_formats = {f.name: f for f in [format_kml, format_shapefile,
+                                     format_geojson]}
