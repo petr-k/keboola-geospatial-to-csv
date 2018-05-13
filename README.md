@@ -138,3 +138,12 @@ You can always leave `parameters` for this processor empty. It resolves to a con
 * `input`.`format` allows for specific configuration of the supported formats:
   - `enabled` specified whether processing for that format is enabled. When `false`, files in this geospatial format will not be searched for (see `glob` below) and converted.
   - `glob` is the glob pattern by which files encoded in this format are searched for. By default, the pattern matches all files at any subfolder level, having the file extension common for that particular geospatial format.
+
+For the technical looking for formal spec, the configuration is validated to conform to [parameters-schema.json](src/parameters-schema.json) JSON schema.
+
+## License
+
+Copyright © 2018, [Petr Krebs](https://github.com/petr-k).
+Released under the [MIT License](LICENSE).
+
+***
