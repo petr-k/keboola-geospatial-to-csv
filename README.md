@@ -17,6 +17,39 @@ The geometry column in the output CSV can be formatted as one of:
 * _GeoJSON geometry_
 * [_Well-known text (WKT)_](https://en.wikipedia.org/wiki/Well-known_text) geometry
 
+### Example conversion
+For instance, a GeoJSON feature collection document such as this:
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Van Dorn Street",
+        "marker-color": "#0000ff",
+        "marker-symbol": "rail-metro",
+        "line": "blue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.12911152370515,
+          38.79930767201779
+        ]
+      }
+    }
+  ]
+}
+```
+
+would produce the following CSV:
+
+```csv
+geojson_geometry,name,marker-color,marker-symbol,line
+"{ ""type"": ""Point"", ""coordinates"": [ -77.129111523705149, 38.79930767201779 ] }",Van Dorn Street,#0000ff,rail-metro,blue
+```
+
 ## Usage
 
 `keboola-geospatial-to-csv` is a KBC processor. As the [documentation on processors](https://developers.keboola.com/extend/component/processors/) states:
