@@ -65,7 +65,7 @@ In other words, there's no strict relationship between the format of the source 
 
 > Processors are additional components which may be used before or after running an arbitrary component (extractor, writer, etc.).
 
-You will, however, most likely want to use this processor *after* an *extractor(*). For instance, when using the Keboola S3 extractor component, you can add `keboola-geospatial-to-csv` as the first processor in the processor chain, so that geospatial datafiles are converted to CSVs as part of your extractor setup.
+You will, however, most likely want to use this processor *after* an *extractor*. For instance, when using the Keboola S3 extractor component, you can add `keboola-geospatial-to-csv` as the first processor in the processor chain, so that geospatial datafiles are converted to CSVs as part of your extractor setup.
 
 ### How it works
 `keboola-geospatial-to-csv` will walk the input files and, by default, try to convert any supported geospatial data files, (as recognized by their extensions) into CSV. You can configure which formats and filename patterns will be processed, but the default configuration will work perfectly fine for majority of use cases.
