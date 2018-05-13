@@ -50,6 +50,15 @@ geojson_geometry,name,marker-color,marker-symbol,line
 "{ ""type"": ""Point"", ""coordinates"": [ -77.129111523705149, 38.79930767201779 ] }",Van Dorn Street,#0000ff,rail-metro,blue
 ```
 
+The above is a result of using the default configuration, which formats the geometry as GeoJSON. However, you could configure the processor so that geometry is encoded differently, e.g. using WKT:
+
+```csv
+wkt_geometry,name,marker-color,marker-symbol,line
+POINT (-77.129111523705149 38.79930767201779),Van Dorn Street,#0000ff,rail-metro,blue
+```
+
+In other words, there's no strict relationship between the format of the source geospatial file and the way geometry is represented in the resulting CSVs; you can easily mix and match. See [Configuration](#configuration) for more details.
+
 ## Usage
 
 `keboola-geospatial-to-csv` is a KBC processor. As the [documentation on processors](https://developers.keboola.com/extend/component/processors/) states:
